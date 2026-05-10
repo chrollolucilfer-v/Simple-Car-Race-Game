@@ -44,20 +44,14 @@ text-align: center;
 
 border-bottom: 2px solid rgb(132, 197, 197);
 
-width: min(90vw, 320px);
+width: min(90vw, 470px);
 
 padding: 20px;
 
 box-sizing: border-box;
 
 }
-.startscreen h2{
-font-size: clamp(20px, 5vw, 35px);
-}
 
-.startscreen p{
-font-size: clamp(12px, 3vw, 18px);
-}
 
 
 
