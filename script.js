@@ -41,6 +41,9 @@ function Start(){
     //Without clearing:new game objects would stack repeatedly. 
     // So this line: resets the game screen.
     startscreen.classList.add('hide');
+     score.style.display = "block";
+    highScore.style.display = "block";
+
     player.isStart = true;
     player.score = 0;
     window.requestAnimationFrame(Play);
@@ -155,4 +158,27 @@ function endGame(){
     player.isStart=false;
     player.speed=5;
     startscreen.classList.remove('hide');
+    
 }
+
+
+
+const leftBtn = document.getElementById("leftBtn");
+
+const rightBtn = document.getElementById("rightBtn");
+
+leftBtn.addEventListener("touchstart", ()=>{
+    keys.ArrowLeft = true;
+});
+
+leftBtn.addEventListener("touchend", ()=>{
+    keys.ArrowLeft = false;
+});
+
+rightBtn.addEventListener("touchstart", ()=>{
+    keys.ArrowRight = true;
+});
+
+rightBtn.addEventListener("touchend", ()=>{
+    keys.ArrowRight = false;
+});

@@ -4,6 +4,11 @@
     font-family: "custom";
     
 }
+body{
+    overflow: hidden;
+    touch-action: none;
+        font-size: clamp(14px, 2vw, 20px);
+}
 
 @font-face {
     font-family: "custom";
@@ -22,21 +27,39 @@ background-size: cover;
 .hide{
     display: none;
 }
-
 .startscreen{
-width: 500px;
-height: 120px;
-padding: 20px;
+
+position: absolute;
+
 top: 50%;
 left: 50%;
-position: absolute;
+
 transform: translate(-50%, -50%);
+
 z-index: 2;
-margin: auto;
+
 background-color: rgb(43, 205, 226);
+
 text-align: center;
+
 border-bottom: 2px solid rgb(132, 197, 197);
+
+width: min(90vw, 320px);
+
+padding: 20px;
+
+box-sizing: border-box;
+
 }
+.startscreen h2{
+font-size: clamp(20px, 5vw, 35px);
+}
+
+.startscreen p{
+font-size: clamp(12px, 3vw, 18px);
+}
+
+
 
 .score,
 .highScore {
@@ -45,13 +68,66 @@ top: 10px;
 left: 20px;
 text-align: center;
 background-color: rgb(100, 224, 156);
-width: 200px;
+padding: 8px;
+width:fit-content;
 color: rgb(59, 40, 40);
 line-height: 40px;
 border-radius: 4px;
 font-size: 1.2em;
+z-index: 20;
+display: none;
 
 }
+
+
+.mobileControls{
+
+position: fixed;
+
+bottom: max(20px, env(safe-area-inset-bottom));
+width: 100%;
+
+display: flex;
+
+justify-content: center;
+
+gap: 30px;
+
+z-index: 999;
+
+}
+
+.mobileControls button{
+
+width: 70px;
+height: 70px;
+
+font-size: 30px;
+
+border: none;
+
+border-radius: 50%;
+
+background: rgba(255,255,255,0.2);
+
+color: white;
+
+backdrop-filter: blur(5px);
+
+}
+
+.mobileControls{
+display:none;
+}
+
+@media(max-width:768px){
+
+.mobileControls{
+display:flex;
+}
+
+}
+
 
 .ClickToStart {
 cursor: pointer;
@@ -60,14 +136,27 @@ padding: 5px;
 }
 
 .gameArea{
-    height: 100vh;
+    /* height: 100vh;
     width: 400px;
     margin: auto;
     position: relative;
 background-color: rgb(32, 32, 32);
 overflow: hidden;
 border-left: 4px dashed white;
-border-right: 4px dashed white;
+border-right: 4px dashed white; */
+
+  width: min(95vw, 400px);
+    height: 100vh;
+
+    margin: auto;
+    position: relative;
+
+    background-color: #1a1a1a;
+
+    overflow: hidden;
+
+    border-left: 4px dashed white;
+    border-right: 4px dashed white;
 }
 
 .roadLines {
